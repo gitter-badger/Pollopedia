@@ -1,0 +1,8 @@
+<div fxLayout="row wrap" fxLayout.xs="column">
+<app-welcome-box fxFlex="calc(60%-15px)" fxFlex.sm="calc(100%-25px)"></app-welcome-box>
+<app-statistic [startpaginaInformatie]="startpaginaInformatie" fxFlex="calc(20%-15px)" fxFlex.sm="calc(100%-25px)"></app-statistic>
+<app-newest-member-list [gebruikers]="startpaginaInformatie?.top5NieuweGebruikers" [titel]="top5NieuweGebruikersTitle" [link]="top5NieuweGebruikersLink" fxFlex="calc(20%-15px)" fxFlex.sm="calc(100%-25px)"></app-newest-member-list>
+</div>
+<div fxLayout="row wrap">
+    <app-poll-card *ngFor="let poll of startpaginaInformatie?.top10NieuwePolls" fxFlex="25%" fxFlex.sm="50%" fxFlex.xs="100%" [poll]="poll"></app-poll-card>
+</div>

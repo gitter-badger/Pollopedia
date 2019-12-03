@@ -1,0 +1,53 @@
+<div class="main_div">
+    <mat-card fxLayout="column" fxLayoutAlign="center center">
+        <mat-card-title>
+            Register
+        </mat-card-title>
+        <form [formGroup]="myForm" #registerForm="ngForm" (ngSubmit)="onSubmit()">
+            <mat-form-field>
+                <input matInput placeholder="Gebruikersnaam " type="text" [(ngModel)]="model.gebruikersnaam" required
+                    minlength="4" formControlName="gebruikersnaam" />
+                <mat-error *ngIf="myForm.hasError('required', 'gebruikersnaam')">
+                    Vul een gebruikersnaam in alstublieft
+                </mat-error>
+                <mat-error *ngIf="myForm.hasError('minlength', 'gebruikersnaam')">
+                    Minimum 4 karakters lang
+                </mat-error>
+            </mat-form-field>
+
+            <mat-form-field>
+                <input matInput placeholder="Email adres" type="email" [(ngModel)]="model.email" required
+                    formControlName="email" email="true" />
+                <mat-error *ngIf="myForm.hasError('required', 'email')">
+                    Vul je email adres in alstublieft
+                </mat-error>
+                <mat-error *ngIf="myForm.hasError('email', 'email')">
+                    Geen geldig email adres
+                </mat-error>
+            </mat-form-field>
+
+            <mat-form-field>
+                <input matInput placeholder="Nieuw wachtwoord" type="password" [(ngModel)]="model.wachtwoord"
+                minlength="6" formControlName="wachtwoord" required>
+                <mat-error *ngIf="myForm.hasError('required', 'wachtwoord')">
+                    Vul je nieuwe wachtwoord in alstublieft
+                </mat-error>
+                <mat-error *ngIf="myForm.hasError('minlength', 'wachtwoord')">
+                    Minimum 6 karakters lang
+                </mat-error>
+            </mat-form-field>
+
+            <mat-form-field>
+                <input matInput placeholder="Bevestig wachtwoord" type="password" formControlName="bevestigWachtwoord"
+                    [errorStateMatcher]="matcher">
+                <mat-error *ngIf="myForm.hasError('notSame')">
+                    Wachtwoorden matchen niet
+                </mat-error>
+            </mat-form-field>
+            <div>
+                <button mat-button color="primary" [disabled]="!registerForm.form.valid"
+                    type="submit">Registreer</button>
+            </div>
+        </form>
+    </mat-card>
+</div>

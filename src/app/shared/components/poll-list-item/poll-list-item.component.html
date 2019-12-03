@@ -1,0 +1,6 @@
+<button mat-list-item (click)="openPollDialog()">
+    <div fxFlex="100%" fxLayout="row">
+            <span fxFlex="90%">{{poll.naam}}</span>
+            <span [ngStyle]="{'background-color': statusColor}" matTooltip="Status" class="status">{{poll.status | statusing}}</span>
+    </div>
+</button>

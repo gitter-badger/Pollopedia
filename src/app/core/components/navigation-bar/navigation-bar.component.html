@@ -1,0 +1,20 @@
+<mat-toolbar color="primary">
+    <div fxHide.gt-xs>
+        <button mat-icon-button (click)="onToggleSidenav()">
+            <mat-icon color="light">menu</mat-icon>
+        </button>
+    </div>
+    <div >
+        <a fxLayoutAlign="center center" routerLink="/home"> <img src="assets/logo.png" alt="pollopedia logo"/> Pollopedia</a>
+    </div>
+    <div  fxFlex fxLayout fxLayoutAlign="end" >
+        <button  fxHide.xs routerLink="/home" routerLinkActive="active" mat-button>Startpagina</button>
+        <button  fxHide.xs *ngIf="isLoggedIn" routerLink="/dashboard" routerLinkActive="active" mat-button>Dashboard</button>
+        <button  fxHide.xs *ngIf="!isLoggedIn" routerLink="/login" routerLinkActive="active" mat-button>Aanmelden</button>
+        <button *ngIf="isLoggedIn" mat-button [matMenuTriggerFor]="belowMenu"><mat-icon>account_circle</mat-icon></button>
+            <mat-menu #belowMenu="matMenu" yPosition="below">
+                <button mat-menu-item routerLink="/profiel" routerLinkActive="active">{{gebruiker?.gebruikersnaam}}</button>
+                <button mat-menu-item routerLink="/login">Afmelden</button>
+            </mat-menu>
+    </div>
+</mat-toolbar>

@@ -1,0 +1,11 @@
+<mat-card>
+    <mat-card-header>
+        <mat-card-title>Vriendschap verzoeken</mat-card-title>
+    </mat-card-header>
+    <mat-card-content>
+        <mat-action-list *ngFor="let verzoek of verzoeken">
+            <app-verzoek-list-item [verzoek]="verzoek"></app-verzoek-list-item>
+        </mat-action-list>
+        <p *ngIf="verzoeken == 0">hier zijn momenteel geen nieuwe Vriendschapverzoeken</p>
+    </mat-card-content>
+</mat-card>

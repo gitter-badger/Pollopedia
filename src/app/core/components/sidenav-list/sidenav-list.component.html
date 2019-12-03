@@ -1,0 +1,30 @@
+<mat-nav-list>
+    <a mat-list-item routerLink="/home" routerLinkActive="active" (click)="onSidenavClose()">
+        <mat-icon>home</mat-icon> <span class="nav-caption">Startpagina</span>   
+    </a>
+    
+    <hr *ngIf="isLoggedIn"/>
+    <h3 *ngIf="isLoggedIn" mat-subheader><mat-icon>dashboard</mat-icon><span class="nav-caption">Dashboard</span></h3>
+    <a *ngIf="isLoggedIn" mat-list-item routerLink="/polls" routerLinkActive="active" (click)="onSidenavClose()">
+        Alle Polls
+    </a>
+    <a *ngIf="isLoggedIn" mat-list-item routerLink="/mijnPolls" routerLinkActive="active" (click)="onSidenavClose()">
+        Mijn Polls
+    </a>
+    <a *ngIf="isLoggedIn" mat-list-item routerLink="/uitgenodigdenPolls" routerLinkActive="active" (click)="onSidenavClose()">
+        Uitgenodigde Polls
+    </a>
+    <a *ngIf="isLoggedIn" mat-list-item routerLink="/mijnDeelgenomenPolls" routerLinkActive="active" (click)="onSidenavClose()">
+        Deelgenomen Polls
+    </a>
+    <a *ngIf="isLoggedIn" mat-list-item routerLink="/gebruikers" routerLinkActive="active" (click)="onSidenavClose()">
+        Alle gebruikers
+    </a>
+    <hr/>
+    <a *ngIf="!isLoggedIn" mat-list-item routerLink="/login" routerLinkActive="active" (click)="onSidenavClose()">
+        Aanmelden
+    </a>
+    <a *ngIf="isLoggedIn" mat-list-item routerLink="/login" routerLinkActive="active" (click)="onSidenavClose()">
+        Afmelden
+    </a>
+</mat-nav-list>

@@ -1,0 +1,11 @@
+<mat-card>
+        <mat-card-title>
+            Lijst van al jouw polls
+        </mat-card-title>
+        <mat-card-content>
+            Vind hier al jouw zelfgemaakte polls terug. Door op een poll te klikken kan je meer informatie zien.
+        </mat-card-content>
+    </mat-card>
+    <mat-action-list *ngFor="let poll of polls">
+        <app-poll-list-item [poll]="poll"></app-poll-list-item>
+    </mat-action-list>

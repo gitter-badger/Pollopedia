@@ -1,0 +1,11 @@
+<mat-card>
+    <mat-card-title>
+        Vriendenlijst
+    </mat-card-title>
+    <mat-card-content>
+        Vind hier al je vrienden terug. Door op een lid te klikken kan je meer informatie zien.
+    </mat-card-content>
+</mat-card>
+<mat-action-list *ngFor="let gebruiker of gebruikers">
+    <app-gebruiker-list-item [gebruiker]="gebruiker"></app-gebruiker-list-item>
+</mat-action-list>

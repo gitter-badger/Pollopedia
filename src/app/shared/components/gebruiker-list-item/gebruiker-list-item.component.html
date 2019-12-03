@@ -1,0 +1,9 @@
+<button mat-list-item (click)="verzoekRelatie(gebruiker.gebruikerID)">
+    <span fxFlex="90%" class="profiel" matTooltipPosition="right" matTooltip="{{gebruiker.aanmaakDatum | date: 'shortDate'}}">
+        <img class="profiel-foto" src="https://api.adorable.io/avatars/40/{{gebruiker.gebruikersnaam}}.png" alt="profiel foto"/> 
+        {{gebruiker.gebruikersnaam}}
+    </span>
+    <span fxFlex="10%" class="profiel" matTooltipPosition="right" matTooltip="Stuur viendenverzoek">
+        <mat-icon>add</mat-icon>
+    </span>
+</button>

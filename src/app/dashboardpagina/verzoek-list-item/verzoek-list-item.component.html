@@ -1,0 +1,11 @@
+
+    <div fxFlex="100%" fxLayout="row" class="profiel">
+        <img class="profiel-foto" src="https://api.adorable.io/avatars/40/{{verzoek.gebruiker.gebruikersnaam}}.png" alt="profiel foto"/> 
+        <span fxFlex="60%" matTooltipPosition="right" matTooltip="{{verzoek.aanmaakDatum | date: 'shortDate'}}">
+           <strong>{{verzoek.gebruiker.gebruikersnaam}}</strong>  wil vrienden worden
+        </span>
+        <span fxFlex="30%">
+            <button mat-list-item  (click)="AcceptVerzoek(verzoek.gebruikerRelatieID)"><mat-icon>check</mat-icon></button>
+            <button mat-list-item  (click)="DenyVerzoek(verzoek.gebruikerRelatieID)"><mat-icon>close</mat-icon></button>
+        </span>
+    </div>

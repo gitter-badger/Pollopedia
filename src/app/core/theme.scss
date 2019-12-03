@@ -1,0 +1,11 @@
+@import '~@angular/material/theming'; //imports we need to set our custom style
+@include mat-core(); //includes the common styles for Angular Material
+
+$pollopedia-app-primary: mat-palette($mat-grey, 900); //color palette for primary
+$pollopedia-app-accent: mat-palette($mat-grey, 700); //color palette for accent
+$pollopedia-app-warn: mat-palette($mat-red); //color palette for warn
+$pollopedia-button-radius: 0px;
+$pollopedia-app-theme: mat-light-theme($pollopedia-app-primary, $pollopedia-app-accent, $pollopedia-app-warn); //creates the theme object
+
+@include angular-material-theme($pollopedia-app-theme);//theme object is included in the Angular Material Theme and will now be used throughout the application
+

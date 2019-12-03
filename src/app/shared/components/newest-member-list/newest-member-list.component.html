@@ -1,0 +1,14 @@
+<mat-card>
+    <mat-card-header>
+        <mat-card-title>{{titel}}</mat-card-title>
+    </mat-card-header>
+    <mat-card-content>
+        <mat-action-list *ngFor="let gebruiker of gebruikers">
+            <app-gebruiker-list-item [gebruiker]="gebruiker"></app-gebruiker-list-item>
+        </mat-action-list>
+        <p *ngIf="gebruikers == 0">hier zijn momenteel nog geen leden</p>
+    </mat-card-content>
+    <mat-card-actions *ngIf="gebruikers != 0">
+        <button mat-raised-button  routerLink="/{{link}}" color="primary">Meer</button>
+    </mat-card-actions>
+</mat-card>

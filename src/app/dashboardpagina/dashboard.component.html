@@ -1,0 +1,29 @@
+
+<mat-card>
+        <mat-card-title>
+                <span fxFlex="90%">Overzicht</span>
+                <span fxFlex="10%">
+                    <button mat-raised-button routerLink="/polls/maak" color="primary">Poll maken</button>
+                </span>
+            </mat-card-title>
+    </mat-card>
+<div fxLayout="row wrap" fxLayout.xs="column">
+    <app-mijn-polls-card [titel]="nieuwstePollsTitle" [link]="nieuwstePollsLink" [mijnPolls]="dashboardpaginaInformatie?.nieuwstePolls"
+    fxFlex="33%" fxFlex.sm="50%" fxFlex.xs="100%"></app-mijn-polls-card>
+
+    <app-mijn-polls-card [titel]="mijnPollsTitle" [link]="mijnPollsLink" [mijnPolls]="dashboardpaginaInformatie?.mijnPolls"
+    fxFlex="33%" fxFlex.sm="50%" fxFlex.xs="100%"></app-mijn-polls-card>
+
+    <app-mijn-polls-card [titel]="mijnDeelgenomenPollsTitle" [link]="mijnDeelgenomenPollsLink" [mijnPolls]="dashboardpaginaInformatie?.mijnDeelgenomenPolls"
+    fxFlex="33%" fxFlex.sm="50%" fxFlex.xs="100%"></app-mijn-polls-card>
+
+    <app-mijn-polls-card [titel]="uitgenodigdePollsTitle" [link]="uitgenodigdePollsLink" [mijnPolls]="dashboardpaginaInformatie?.uitgenodigdePolls"
+     fxFlex="33%" fxFlex.sm="50%" fxFlex.xs="100%"></app-mijn-polls-card>
+
+    <app-newest-member-list [gebruikers]="dashboardpaginaInformatie?.mijnVrienden" [titel]="vriendenlijstTitle" [link]="vriendenLink"
+    fxFlex="33%" fxFlex.sm="50%" fxFlex.xs="100%"></app-newest-member-list>
+
+     <app-verzoeken-card [verzoeken]="dashboardpaginaInformatie?.mijnVriendenschapVerzoeken"
+     fxFlex="33%" fxFlex.sm="50%" fxFlex.xs="100%"></app-verzoeken-card>
+
+</div> 

@@ -1,0 +1,26 @@
+<mat-card>
+    <mat-card-header>
+        <mat-card-title>Welkom op Pollopedia</mat-card-title>
+        <mat-card-subtitle>Gemaakt door Nico Claes</mat-card-subtitle>
+    </mat-card-header>
+    <mat-card-content>
+        <p *ngIf="isLoggedIn">
+            Hallo {{gebruiker.gebruikersnaam}}, <br/><br/>
+            Dit is Angular een webapplicatie om polls te lanceren binnen een groep. <br/>
+            Deze site wordt gehost op Firebase. De back end is schrijven in .NET Core. <br/>
+            Veel ondek plezier!
+        </p>
+        <p *ngIf="!isLoggedIn">
+            Je kan in polls stemmen, en er zelf aanmaken. <br/>
+            Vriendenschappen maken dus je nooit meer alleen voelen.<br/><br/>
+
+            Momenteel heb je een gast op deze website. <br/>
+            Je kunt dus alleen maar de startpagina bekijken.<br/>
+            Registeer nu en toegang te heel het platfrom.<br/>
+        </p>
+    </mat-card-content>
+    <mat-card-actions  *ngIf="!isLoggedIn">
+        <button mat-raised-button  routerLink="/login" color="primary">Aanmelden</button>
+        <button mat-raised-button  routerLink="/registreren" color="primary">Registreren</button>
+    </mat-card-actions>
+</mat-card>
