@@ -1,5 +1,7 @@
 # AngularOpdracht
 
+[![Join the chat at https://gitter.im/Pollopedia/community](https://badges.gitter.im/Pollopedia/community.svg)](https://gitter.im/Pollopedia/community?utm_source=badge&utm_medium=badge&utm_campaign=pr-badge&utm_content=badge)
+
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 8.3.8.
 
 ## Development server
